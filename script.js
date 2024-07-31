@@ -21,7 +21,6 @@ let totalPrice;
 const pricePerKM = 0.21;
 const youngDiscount = pricePerKM - (0.21 * 20 / 100);
 const seniorDiscount = pricePerKM - (0.21 * 40 / 100);
-console.log (seniorDiscount);
 
 // 3. Raccogliere i dati
 const KMNumber = prompt('Quanti chilometri vorresti fare?', '10');
@@ -31,7 +30,6 @@ console.log ('userAge:', userAge);
 
 // 4. Elaborazione dati
 totalPrice = pricePerKM * KMNumber;
-console.log(totalPrice);
 
 if (userAge <= 18) {
     totalPrice = youngDiscount * KMNumber
@@ -40,7 +38,6 @@ if (userAge <= 18) {
 }
 
 totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
-console.log((Math.round(totalPrice * 100) / 100).toFixed(2));
 
 // 5. Produzione output
 ticketPrice.innerText = `Ecco qui il tuo prezzo: ${totalPrice}€`;
