@@ -23,3 +23,9 @@ const pricePerKM = 0.21;
 const youngDiscount = 0.21 - (0.21 * 20 / 100);
 const seniorDiscount = 0.21 - (0.21 * 40 / 100);
 console.log (seniorDiscount);
+
+// 3. Raccogliere i dati
+const KMNumber = prompt('Quanti chilometri vorresti fare?', '50');
+const userAge = prompt('Quanti anni hai?', '28');
+console.log ('KMNumber:', KMNumber)
+console.log ('userAge:', userAge)
