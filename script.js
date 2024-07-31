@@ -13,10 +13,11 @@ console.log('OK')
 */
 
 // 1. Collegarsi al DOM e recuperare gli elementi
-let totalPrice = document.getElementById('price');
-console.log (totalPrice);
+let ticketPrice = document.getElementById('price');
+console.log (ticketPrice);
 
 // 2. Dichiarare le variabili
+let totalPrice;
 const pricePerKM = 0.21;
 const youngDiscount = pricePerKM - (0.21 * 20 / 100);
 const seniorDiscount = pricePerKM - (0.21 * 40 / 100);
@@ -38,3 +39,6 @@ if (userAge <= 18) {
     totalPrice = seniorDiscount * KMNumber
 }
 console.log(totalPrice);
+
+// 5. Produzione output
+ticketPrice.innerText = `Ecco qui il tuo prezzo: ${totalPrice}€`;
