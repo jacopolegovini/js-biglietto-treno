@@ -38,15 +38,14 @@ if (userAge <= 18) {
 totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
 
 // 5. Produzione output
-ticketPriceElement.innerText = 
-`
+ticketPriceElement.innerText = `
 Vuoi fare ${KMNumber} Km e hai ${userAge} anni.
-Ecco qui il tuo prezzo secondo le informazioni che ci hai condiviso: ${totalPrice}€`;
+Ecco qui il tuo prezzo secondo le informazioni che ci hai condiviso: ${totalPrice.replace('.', ',')}€`;
 
 if (userAge <= 18) {
     discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
-    youngDiscountElement.innerText = `Hai risparmiato: ${discountPrice}€`;
+    youngDiscountElement.innerText = `Hai risparmiato: ${discountPrice.replace('.', ',')}€`;
 } else if (userAge >= 65) {
     discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
-    seniorDiscountElement.innerText = `Hai risparmiato: ${discountPrice}€`;
+    seniorDiscountElement.innerText = `Hai risparmiato: ${discountPrice.replace('.', ',')}€`;
 }
