@@ -38,7 +38,9 @@ if (userAge <= 18) {
 } else if (userAge >= 65) {
     totalPrice = seniorDiscount * KMNumber
 }
-console.log(totalPrice);
+
+totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
+console.log((Math.round(totalPrice * 100) / 100).toFixed(2));
 
 // 5. Produzione output
 ticketPrice.innerText = `Ecco qui il tuo prezzo: ${totalPrice}€`;
