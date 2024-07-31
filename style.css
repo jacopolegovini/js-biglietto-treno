@@ -6,25 +6,58 @@
 }
 
 header {
-    background-color: aquamarine;
+    background-color: #d0deed;
     height: 100px;
 }
 
 h1 {
     text-align: center;
     line-height: 100px;
+    text-transform: uppercase;
 }
 
 h2 {
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
 .container {
     margin: 0 auto;
-    max-width: 1040;
+    max-width: 1200px;
+    padding: 0 10px;
 }
 
 /* Utilities */
 
+.card {
+    border-radius: 20px;
+    background-color: #F0FDF4;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+}
+
 /* Header */
+
+/* Card */
+.copy {
+    flex-basis: 50%;
+    border-radius: 20px;
+    background-color: #fdf0f9;
+    padding: 10px;
+}
+
+.ticket {
+    flex-basis: 50%;
+    border-radius: 20px;
+    background-color: #fdf0f9;
+    padding: 10px;
+}
+
+/* Media */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
