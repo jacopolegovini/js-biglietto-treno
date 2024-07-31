@@ -38,7 +38,10 @@ if (userAge <= 18) {
 totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
 
 // 5. Produzione output
-ticketPriceElement.innerText = `Ecco qui il tuo prezzo secondo le informazioni che ci hai condiviso: ${totalPrice}€`;
+ticketPriceElement.innerText = 
+`
+Vuoi fare ${KMNumber} Km e hai ${userAge} anni.
+Ecco qui il tuo prezzo secondo le informazioni che ci hai condiviso: ${totalPrice}€`;
 
 if (userAge <= 18) {
     discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
