@@ -20,4 +20,6 @@ console.log (totalPrice);
 
 // 2. Dichiarare le variabili
 const pricePerKM = 0.21;
-const youngDiscount = 0.21 * 20 / 100;
+const youngDiscount = 0.21 - (0.21 * 20 / 100);
+const seniorDiscount = 0.21 - (0.21 * 40 / 100);
+console.log (seniorDiscount);
