@@ -1,5 +1,3 @@
-console.log('OK')
-
 /* 
 1. Collegarsi al DOM e recuperare gli elementi
 2. Dichiarare le variabili
@@ -13,20 +11,20 @@ console.log('OK')
 */
 
 // 1. Collegarsi al DOM e recuperare gli elementi
-let ticketPrice = document.getElementById('price');
-console.log (ticketPrice);
+let ticketPriceElement = document.getElementById('price');
+let youngDiscountElement = document.getElementById('young-sale');
+let seniorDiscountElement = document.getElementById('senior-sale');
 
 // 2. Dichiarare le variabili
 let totalPrice;
+let discountPrice;
 const pricePerKM = 0.21;
-const youngDiscount = pricePerKM - (0.21 * 20 / 100);
+youngDiscount = pricePerKM - (0.21 * 20 / 100);
 const seniorDiscount = pricePerKM - (0.21 * 40 / 100);
 
 // 3. Raccogliere i dati
 const KMNumber = prompt('Quanti chilometri vorresti fare?', '10');
 const userAge = prompt('Quanti anni hai?', '28');
-console.log ('KMNumber:', KMNumber);
-console.log ('userAge:', userAge);
 
 // 4. Elaborazione dati
 totalPrice = pricePerKM * KMNumber;
@@ -40,4 +38,12 @@ if (userAge <= 18) {
 totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
 
 // 5. Produzione output
-ticketPrice.innerText = `Ecco qui il tuo prezzo: ${totalPrice}€`;
+ticketPriceElement.innerText = `Ecco qui il tuo prezzo secondo le informazioni che ci hai condiviso: ${totalPrice}€`;
+
+if (userAge <= 18) {
+    discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
+    youngDiscountElement.innerText = `Hai risparmiato: ${discountPrice}€`;
+} else if (userAge >= 65) {
+    discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
+    seniorDiscountElement.innerText = `Hai risparmiato: ${discountPrice}€`;
+}
